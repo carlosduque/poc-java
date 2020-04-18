@@ -16,10 +16,7 @@ public class Employee extends Person {
     }
 
     public String toString() {
-        return "Employee[employee id=" + this.employeeId +
-            ", active=" + active +
-            ", DOB=" + dob +
-            "::" + super.toString() + "]";
+        return "Employee[" + super.toString() + "::" + active + ":" + dob + "]";
     }
 
     public Date getDateOfBirth() {
