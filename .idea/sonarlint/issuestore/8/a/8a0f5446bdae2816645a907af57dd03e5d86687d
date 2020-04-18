@@ -1,0 +1,16 @@
+
+N	java:S106""9Replace this use of System.out or System.err by a logger.(©Õ„ï
+Z	java:S106."9Replace this use of System.out or System.err by a logger.(¼Ûàöøÿÿÿÿ8íÓÓİ—.
+o
+java:S1128"TRemove this unnecessary import: same package classes are always implicitly imported.(ç—×“ıÿÿÿÿ
+Z	java:S106("9Replace this use of System.out or System.err by a logger.(–’¹Òøÿÿÿÿ8‰Áİ—.
+S	java:S106"9Replace this use of System.out or System.err by a logger.(Ë¬šõşÿÿÿÿ
+U	java:S106%"9Replace this use of System.out or System.err by a logger.(£«–Ô8ÍÃÀİ—.
+v
+java:S2293*"YReplace the type specification in this constructor call with the diamond operator ("<>").(‰›¹Ù8ÇÆÑİ—.
+S	java:S106"9Replace this use of System.out or System.err by a logger.(³…ìÕıÿÿÿÿ
+S	java:S106 "9Replace this use of System.out or System.err by a logger.(ŸÓÓ¦şÿÿÿÿ
+P
+java:S1854":Remove this useless assignment to local variable "author".(¥È•ƒ
+t
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(²áåúÿÿÿÿ
