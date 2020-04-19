@@ -1,15 +1,15 @@
 package o.beans;
 
-import java.util.Date;
+import java.util.Objects;
 
 public class Person {
 
     private final String name;
     private final String lastname;
 
-    public Person(String name, String lastname) {
-        this.name = name;
-        this.lastname = lastname;
+    public Person(String newName, String newLastname) {
+        this.name = Objects.requireNonNull(newName, "name must not be null");
+        this.lastname = Objects.requireNonNull(newLastname, "lastname must not be null");
     }
 
     public String getName() {
@@ -21,6 +21,6 @@ public class Person {
     }
 
     public String toString() {
-        return "name=" + this.name + " lastname=" + this.lastname;
+        return this.lastname + ", " + this.name;
     }
 }

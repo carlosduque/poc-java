@@ -1,29 +1,30 @@
 package o.beans;
 
 import java.util.Date;
+import java.util.Objects;
 
 import o.beans.Person;
 
 public class Employee extends Person {
 
-    private final Date dob;
+    private final Date hireDate;
     private final boolean active;
 
-    public Employee(String name, String lastname, Date dob, boolean active) {
+    public Employee(String name, String lastname, Date newHireDate, boolean active) {
         super(name, lastname);
-        this.dob = dob;
+        this.hireDate = Objects.requireNonNull(newHireDate, "hire date can't be null");
         this.active = active;
     }
 
     public String toString() {
-        return "Employee[" + super.toString() + "::" + active + ":" + dob + "]";
+        return "Employee[" + super.toString() + "::" + active + ":" + hireDate + "]";
     }
 
-    public Date getDateOfBirth() {
-        return this.dob;
+    public Date getHireDate() {
+        return new Date(hireDate.getTime());
     }
 
     public boolean isActive() {
-        return this.active;
+        return active;
     }
 }

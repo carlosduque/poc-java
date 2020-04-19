@@ -17,27 +17,31 @@ import org.codehaus.jackson.map.ObjectMapper;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        Serializer s = new AvroSerializer("./src/main/resources/author.avsc");
 
         List<Book> books = new ArrayList<Book>(2);
         books.add(new Book("Black", 377));
         books.add(new Book("Bat", 443));
-        Author author = new Author("Bruce", "Wayne", new Date().getTime(), books);
+        Author author = new Author("Bruce", "Wayne", books);
         System.out.println(author);
+        List<Serializer> serializers = new ArrayList<Serializer>();
+
+        Serializer avro = new AvroSerializer("./serialization/src/main/resources/author.avsc");
+        serializers.add(avro);
 
         System.out.println(":::serializing");
-        s.serialize(author, new File("author.avro"));
+        for (Serializer s : serializers)
+            s.serialize(author, new File("author.avro"));
         author = null;
-
         System.out.println("=====================");
-        author = s.deserialize(new File("author.avro"));
-        System.out.println("Avro read author: " + author);
 
-        Employee employee = new Employee("Anon", "Imo", new Date(), true);
-        System.out.println("employee: " + employee.toString());
+        for (Serializer s : serializers)
+            System.out.println(":::deserializing:: " + s.deserialize(new File("author.avro")));
 
-        ObjectMapper mapper = new ObjectMapper();
-        System.out.println("employee json: " + mapper.writeValueAsString(employee));
+        //Employee employee = new Employee("Anon", "Imo", new Date(), true);
+        //System.out.println("employee: " + employee.toString());
+
+        //ObjectMapper mapper = new ObjectMapper();
+        //System.out.println("employee json: " + mapper.writeValueAsString(employee));
 
     }
 
