@@ -10,11 +10,12 @@ public class UltraInstinct implements State {
 
     @Override
     public void hit(int damage) {
-        ctx.power(ctx.power() - damage);
-        if (ctx.power() < 30) {
-            ctx.power(1);
-            ctx.state(ctx.normal());
+        if (ctx.power() - damage > 30) {
+            ctx.power(ctx.power() - damage);
+            return;
         }
+        ctx.power(1);
+        ctx.state(ctx.normal());
     }
 
     @Override

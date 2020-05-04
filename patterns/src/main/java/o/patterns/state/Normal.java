@@ -10,11 +10,12 @@ public class Normal implements State {
 
     @Override
     public void hit(int damage) {
-        ctx.power(ctx.power() - damage);
-        if (ctx.power() < 30) {
-            ctx.power(1000);
-            ctx.state(ctx.superOne());
+        if (ctx.power() - damage > 30) {
+            ctx.power(ctx.power() - damage);
+            return;
         }
+        ctx.power(ctx.power() + 1000);
+        ctx.state(ctx.superOne());
     }
 
     @Override

@@ -10,11 +10,12 @@ public class Blue implements State {
 
     @Override
     public void hit(int damage) {
-        ctx.power(ctx.power() - damage);
-        if (ctx.power() < 30) {
-            ctx.power(5000);
-            ctx.state(ctx.ultraInstinct());
+        if (ctx.power() - damage > 30) {
+            ctx.power(ctx.power() - damage);
+            return;
         }
+        ctx.power(ctx.power() + 8000);
+        ctx.state(ctx.ultraInstinct());
     }
 
     @Override

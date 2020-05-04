@@ -22,8 +22,8 @@ public class Saiyajin {
     }
 
     public void hit(int damage) {
-        System.out.println(this);
         this.state.hit(damage);
+        System.out.println(this);
     }
 
     public int power() {

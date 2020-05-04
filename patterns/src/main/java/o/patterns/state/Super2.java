@@ -10,11 +10,12 @@ public class Super2 implements State {
 
     @Override
     public void hit(int damage) {
-        ctx.power(ctx.power() - damage);
-        if (ctx.power() < 30) {
-            ctx.power(3000);
-            ctx.state(ctx.superThree());
+        if (ctx.power() - damage > 30) {
+            ctx.power(ctx.power() - damage);
+            return;
         }
+        ctx.power(ctx.power() + 3000);
+        ctx.state(ctx.superThree());
     }
 
     @Override
