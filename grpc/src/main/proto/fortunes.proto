@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "o.grpc.fortunes";
+option java_outer_classname = "FortuneProto";
+option objc_class_prefix = "FRTN";
+
+package fortunes;
+
+service FortuneService {
+  rpc enlighten (FortuneRequest) returns (FortuneResponse) {}
+}
+
+message FortuneRequest {
+  string name = 1;
+}
+
+message FortuneResponse {
+  string message = 1;
+}
