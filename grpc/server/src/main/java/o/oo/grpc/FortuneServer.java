@@ -7,11 +7,15 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 
+import o.oo.grpc.fortunes.FortuneGrpc;
+import o.oo.grpc.fortunes.FortuneRequest;
+import o.oo.grpc.fortunes.FortuneResponse;
+
 /**
  * Server that manages startup/shutdown of a server.
  */
-public class Server {
-  private static final Logger logger = Logger.getLogger(Server.class.getName());
+public class FortuneServer {
+  private static final Logger logger = Logger.getLogger(FortuneServer.class.getName());
 
   private Server server;
 
