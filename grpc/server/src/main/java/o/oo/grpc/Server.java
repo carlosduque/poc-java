@@ -1,4 +1,4 @@
-package o.grpc;
+package o.oo.grpc;
 
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
@@ -10,8 +10,8 @@ import java.util.logging.Logger;
 /**
  * Server that manages startup/shutdown of a server.
  */
-public class FortuneServer {
-  private static final Logger logger = Logger.getLogger(FortuneServer.class.getName());
+public class Server {
+  private static final Logger logger = Logger.getLogger(Server.class.getName());
 
   private Server server;
 
@@ -64,7 +64,7 @@ public class FortuneServer {
 
   static class FortuneServiceImpl extends FortuneGrpc.FortuneImplBase {
     @Override
-    public void enlighten(FortuneRequest req, StreamObserver<FortuneResponse> responseObserver) {
+    public void retrieve(FortuneRequest req, StreamObserver<FortuneResponse> responseObserver) {
       FortuneResponse reply = FortuneResponse.newBuilder().setMessage("wisdom: " + req.getName()).build();
       responseObserver.onNext(reply);
       responseObserver.onCompleted();
