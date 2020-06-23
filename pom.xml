@@ -11,5 +11,6 @@
  
   <modules>
     <module>serialization</module>
+      <module>gui</module>
   </modules>
 </project>
