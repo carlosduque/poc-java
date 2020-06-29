@@ -36,7 +36,7 @@ public class WorkerBarrier implements Runnable {
           } catch (InterruptedException e) {
             return;
           } catch (BrokenBarrierException e) {
-              return;
+            return;
           }
           for (int i = 0; i < number; i++)
               buffer.append(i % 2 == 0 ? "-" : "+");
