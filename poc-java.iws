@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="902f3796-cfb9-449d-a1bd-d5595a6fbbdf" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/serialization/src/main/java/o/beans/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/serialization/src/main/java/o/beans/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/a/8a0f5446bdae2816645a907af57dd03e5d86687d" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/a/8a0f5446bdae2816645a907af57dd03e5d86687d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/1/916aba2721427367d32497055494b0c89bf65183" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/1/916aba2721427367d32497055494b0c89bf65183" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/d/cd3d4e2dfe9110d538adb6a072aa6039f28735db" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/d/cd3d4e2dfe9110d538adb6a072aa6039f28735db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/poc-java.iws" beforeDir="false" afterPath="$PROJECT_DIR$/poc-java.iws" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
