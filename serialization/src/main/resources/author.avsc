@@ -4,7 +4,6 @@
  "fields": [
      {"name": "name",     "type": "string"},
      {"name": "lastname", "type": "string"},
-     {"name": "dob",      "type": "long"},
      {"name": "books",    "type": {"type": "array",
          "items": {
              "type": "record",
