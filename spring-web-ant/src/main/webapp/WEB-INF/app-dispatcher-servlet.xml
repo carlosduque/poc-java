@@ -6,21 +6,55 @@
     <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
         <property name="mappings">
             <props>            				
-                <prop key="**/main.form">mainController</prop>      
+                <prop key="**/mainAbstract.do">mainAbstractController</prop>      
+                <prop key="**/mainCommand.do">mainCommandController</prop>      
+                <prop key="**/mainAbstractForm.do">mainAbstractFormController</prop>      
+                <prop key="**/mainSimpleForm.do">mainSimpleFormController</prop>      
             </props>
         </property>
     </bean>
 
-    <bean name="redisService"
-          class="o.oo.service.DefaultRedisService" />
+    <bean name="defaultService"
+          class="o.oo.service.DefaultService" />
 
-    <bean name="mainController"
-          class="o.oo.controller.MainController">
+    <bean name="mainAbstractController"
+          class="o.oo.controller.MainAbstractController">
         <property name="service">
-            <ref bean="redisService" />
+            <ref bean="defaultService" />
         </property>
     </bean>
-        
+ 
+    <!-- TBD -->
+    <bean name="mainCommandController"
+          class="o.oo.controller.MainCommandController">
+        <property name="commandName" value="word"/>
+        <property name="commandClass" value="o.oo.vo.Word"/>
+        <property name="service">
+            <ref bean="defaultService" />
+        </property>
+    </bean>
+
+    <!-- TBD -->
+    <bean name="mainAbstractFormController"
+          class="o.oo.controller.MainAbstractFormController">
+        <property name="commandName" value="word"/>
+        <property name="commandClass" value="o.oo.vo.Word"/>
+        <property name="service">
+            <ref bean="defaultService" />
+        </property>
+    </bean>
+
+    <bean name="mainSimpleFormController"
+          class="o.oo.controller.MainSimpleFormController">
+        <property name="formView" value="MainSimpleFormPage"/>
+        <property name="successView" value="MainSimpleFormPageSuccess"/>
+        <property name="commandName" value="word"/>
+        <property name="commandClass" value="o.oo.vo.Word"/>
+        <property name="service">
+            <ref bean="defaultService" />
+        </property>
+    </bean>
+
     <bean id="viewResolver"
           class="org.springframework.web.servlet.view.InternalResourceViewResolver" >
         <property name="prefix">

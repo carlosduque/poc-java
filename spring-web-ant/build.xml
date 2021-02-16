@@ -30,6 +30,7 @@
     <!-- Libraries -->
     <property name="compile.lib.dir" location="${lib.dir}/compile" />
     <property name="test.lib.dir" location="${lib.dir}/test" />
+    <property name="deployment.dir" location="C:\Tools\JBoss\jboss-eap-6.4\standalone\deployments" />
 
     <!-- Project Classpath -->
     <path id="compile.libs.classpath">
@@ -187,7 +188,21 @@
         <fail if="test.failed.flag">Tests failed. Check reports at: ${test.report.dir}</fail>
     </target>
 
-    <target name="default" depends="clean,test,package-war" description="Run all the required targets to test and build the jar">
+    <target name="explode-war" description="explode war files">
+        <unwar 
+            src="${target.dir}/${ant.project.name}.war" 
+            dest="${target.dir}/${ant.project.name}x.war" 
+            overwrite="true" >
+        </unwar>
+    </target>
+    
+    <target name="deploy-war" depends="explode-war" description="deploy war files">
+        <copy todir="${deployment.dir}/${ant.project.name}.war" overwrite="true">
+            <fileset dir="${target.dir}/${ant.project.name}x.war" />
+        </copy>
+    </target>
+    
+    <target name="default" depends="clean,test,package-war,explode-war, deploy-war" description="Run all the required targets to test and build the jar">
     </target>
 
 </project>

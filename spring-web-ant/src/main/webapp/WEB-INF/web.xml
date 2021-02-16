@@ -14,7 +14,7 @@
   
   <servlet-mapping>
  	<servlet-name>app-dispatcher</servlet-name>
-    <url-pattern>*.form</url-pattern>
+    <url-pattern>*.do</url-pattern>
   </servlet-mapping>
 
 </web-app>
