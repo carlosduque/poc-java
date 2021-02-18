@@ -16,11 +16,21 @@
 
     <bean name="defaultService"
           class="o.oo.service.DefaultService" />
+    <bean name="uuider"
+          class="o.oo.service.UuidRandomizerService" />
+    <bean name="namer"
+          class="o.oo.service.NameRandomizerService" />
 
     <bean name="mainAbstractController"
           class="o.oo.controller.MainAbstractController">
         <property name="service">
             <ref bean="defaultService" />
+        </property>
+        <property name="idGenerator">
+            <ref bean="uuider" />
+        </property>
+        <property name="nameGenerator">
+            <ref bean="namer" />
         </property>
     </bean>
  
@@ -32,6 +42,12 @@
         <property name="service">
             <ref bean="defaultService" />
         </property>
+        <property name="idGenerator">
+            <ref bean="uuider" />
+        </property>
+        <property name="nameGenerator">
+            <ref bean="namer" />
+        </property>
     </bean>
 
     <!-- TBD -->
@@ -41,6 +57,12 @@
         <property name="commandClass" value="o.oo.vo.Word"/>
         <property name="service">
             <ref bean="defaultService" />
+        </property>
+        <property name="idGenerator">
+            <ref bean="uuider" />
+        </property>
+        <property name="nameGenerator">
+            <ref bean="namer" />
         </property>
     </bean>
 
@@ -52,6 +74,12 @@
         <property name="commandClass" value="o.oo.vo.Word"/>
         <property name="service">
             <ref bean="defaultService" />
+        </property>
+        <property name="idGenerator">
+            <ref bean="uuider" />
+        </property>
+        <property name="nameGenerator">
+            <ref bean="namer" />
         </property>
     </bean>
 

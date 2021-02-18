@@ -18,7 +18,7 @@ public class Word {
 
     @Override
    public String toString() {
-       return "Word '" + this.content + "'";
+       return this.content;
    } 
         
 }
